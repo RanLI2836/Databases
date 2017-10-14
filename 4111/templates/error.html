@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error</title>
+	<style>
+		div.sec{
+			float: left;
+			width: 50%;
+			font-size: 200%;
+		}
+		div.container{
+			padding: 2em;
+		}
+	</style>
+</head>
+<body>
+<div class ="container">
+	<div class="sec">
+		<br><br><br>
+		<h1 style="color: #808080">Oooooops!</h1>
+		{% if error %}
+			{{error}}
+		{% endif %}
+	</div>
+	<div>
+		<img src="http://www.simpsoncrazy.com/content/pictures/bart/BartSimpson7.gif" >
+	</div>
+</div>
+
+</body>
+</html>

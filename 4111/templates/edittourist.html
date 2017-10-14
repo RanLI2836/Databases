@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<title>tourist</title>
+<head>
+<style>
+header{
+  padding: 1em;
+  color: white;
+  background-color:rgb(150, 185, 215);
+}
+div.container{
+  padding: 1em;
+  font-size: 120%;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+}
+
+table{
+    width: 100%;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+}
+table th {
+    background-color: rgb(200,200,200);
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Tourist</h1>
+</header>
+
+<div class="container">
+
+  <h3>Edit tourist</h3>
+   <!-- tid   tname   tgender   dob  tphone   tadd   -->
+
+  <form action="/editaction" method="post">
+  <label>tourist ID:</label>
+  <input type="hidden" name="tid" value="{{t[0]}}"/>
+  {{t[0]}}
+  <br>
+  <label>Tourist name:</label><br>
+  <input type="text" name="tname" value="{{t[1]}}">
+  <br>
+  <label>Gender:</label><br>
+  <input type="text" name="tgender" value="{{t[2]}}">
+  <br>
+  <label>Date of Birth:</label><br>
+  <input type="text" name="dob" value="{{t[3]}}">
+  <br>
+  <label>Phone Number:</label><br>
+  <input type="text" name="tphone" value="{{t[4]}}">
+  <br>
+  <label>Address:</label><br>
+  <input type="text" name="tadd" value="{{t[5]}}">
+  <br><br>
+  <input type="submit" value="Edit">
+  <input type="reset">
+  </form>
+ 
+
+</div>
+
+</body>
+</html>
+

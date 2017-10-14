@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>Insurance</title>
+<head>
+  <style>
+
+    header{
+      padding: 1em;
+      color: white;
+      background-color:rgb(190, 205, 20);
+      clear: left;
+
+    }
+    div.sec1{
+      float: left;
+      width: 33.3%;
+    }
+    div.sec2{
+      float: left;
+      width: 66.7%;
+    }
+    div.
+    div.container{
+  padding: 1em;
+}
+    table{
+      width: 60%;
+    }
+    table tr:nth-child(even) {
+      background-color: #eee;
+    }
+    table tr:nth-child(odd) {
+     background-color:#fff;}
+    table th {
+      background-color: rgb(200,200,200);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <h1>Traval Insurance</h1>   
+  <p>You'll find the right plan. Every trip, every time.</p> 
+</header>
+
+
+<div class="container">
+<div class="sec1">
+  <h2>Annual</h2>
+  <p>Whether you're traveling for leisure or business, if you're a frequent traveler, you'll appreciate the savings and convenience of year-round coverage, allowing you to leave town without having to purchase travel insurance for each trip.</p>
+</div>
+
+<div class="sec1">
+  <h2>Domestic</h2>
+  <p>It doesn't matter where you are, the unexpected can happen, causing you to cancel or interrupt your trip. Our travel insurance plans for domestic travel are designed to cover what's important for travel within the United States.</p> 
+</div>
+
+<div class="sec1">
+  <h2>International</h2>
+  <p>When traveling internationally, you not only want to protect the cost of your trip, but also yourself and those traveling with you. The cost of a medical emergency may not be covered by your healthcare plan when traveling abroad.</p>
+</div>  
+  <div class="sec2">
+    <h2 align="center">All Insurance Types</h2>
+    <table align="center">
+      <tr>
+        <th>NO.</th>
+        <th>Type</th>
+      </tr>
+      {% for n in insurances %}
+      <tr>
+        <div>
+          <td align="center">{{n[0]}}</td>
+          <td align="center">{{n[1]}}</td>
+        </div>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="sec1">
+    <br>
+    <h2>Earn 30,000 bonus points for</h2>
+    <p style="font-size:120%;">enrolling more than one insurance.</p>
+  
+    <h3>Lucky Customers</h3>
+    <div>
+      <marquee style="WIDTH: 280px; HEIGHT: 200px" scrollAmount=1 scrollDelay=1 direction=up width=280 height=200>
+        {% for m in customers %}
+        <p>ID:{{m[0]}}  NAME: {{m[1]}}</p>
+        {% endfor %}
+      </marquee>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+

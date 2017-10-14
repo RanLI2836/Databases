@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>Itinerary</title>
+<head>
+<style>
+header{
+  padding: 1em;
+  color: white;
+  background-color:rgb(100, 170, 180);
+}
+div.container{
+  padding: 1em;
+}
+table{
+  width: 100%;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+}
+table th {
+    background-color: rgb(200,200,200);
+    color: white;
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Itinerary</h1>
+</header>
+
+<div class="container">
+  <table align="center">
+    <tr>
+      <th>NO.</th>
+      <th>Name</th>
+      <th>Guide</th>
+      <th>Hotel</th>
+      <th>Vehicle</th>
+      <th>Group</th>
+    </tr>
+    {% for n in its %}
+    <tr>
+    <div>
+      <td align="center">{{n[0]}}</td>
+      <td align="center">{{n[1]}}</td>
+      <td align="center">{{n[2]}}</td>
+      <td align="center">{{n[3]}}</td>
+      <td align="center">{{n[4]}}</td>
+      <td align="center">{{n[5]}}</td>
+    </div>
+    </tr>
+    {% endfor %}
+  </table>
+  <h4 align="center">Search Group Information!</h4>
+  <form align="center" action="/searchgroup" method="post">
+  Group No.
+  <input type="text" name="No" value="">
+  <input type="submit" value="Search">
+  </form> 
+</div>
+
+</body>
+</html>
+

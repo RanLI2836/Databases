@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<title>Scenic Spot</title>
+
+<head>
+<style>
+header{
+  padding: 1em;
+  color: white;
+  background-color:rgb(100, 170, 180);
+}
+
+div.container{
+  padding: 1em;
+}
+div.sec01{
+  float: left;
+  width: 33.3%;
+}
+div.sec02{
+  float: left;
+  width: 66.7%;
+}
+
+table{
+  width: 100%
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+
+}
+table th {
+    background-color: rgb(200,200,200);
+    color: white;
+    padding: 8px
+}
+table td{
+    padding: 8px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Scenic Spot</h1>
+</header>
+
+
+<div class="container">
+  
+<div class="sec01">
+  <h3 align="center">Adding Scenic Spot</h3>
+  
+  <form align="center" action="/addscenicspot" method="post">
+  Scenic Spot ID:<br>
+  <input type="text" name="sid" value="">
+  <br>
+  Name:<br>
+  <input type="text" name="sname" value="">
+  <br>
+  Type:<br>
+  <input type="text" name="stype" value="">
+  <br><br>
+  <input type="submit" value="Add">
+  <input type="reset">
+  </form> 
+</div> 
+<div class="sec02">
+  <h3>All Scenic Spots</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+    </tr>
+    {% for n in scenicspots %}
+    <tr>
+    <div>
+      <td align="center">{{n[0]}}</td>
+      <td align="center">{{n[1]}}</td>
+    </div>
+    </tr>
+    {% endfor %}
+  </table>
+</div> 
+</div>
+
+</body>
+</html>
+
+

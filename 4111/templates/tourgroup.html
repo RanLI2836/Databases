@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tourgroup</title>
+	<style>
+		header{
+		  padding: 1em;
+		  color: white;
+		  background-color:rgb(150, 185, 215);
+		}
+
+		div.container{
+		  padding: 1em;
+		}
+		table{
+			width: 100%;
+		}
+		table tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table tr:nth-child(odd) {
+		   background-color:#fff;
+		}
+		table th {
+		    background-color: rgb(200,200,200);
+		    color: white;
+	</style>
+</head>
+
+<header>
+	<h1>Tour Group</h1>
+</header>
+
+<body>
+<div class="container">
+	<h1 align="center">WHO ARE IN THIS GROUP</h1>
+	<table align="center">
+    <tr>
+      <th>Name</th>
+      <th>GENDER</th>
+      <th>Phone</th>
+    </tr>
+    {% for n in people %}
+    <tr>
+    <div>
+      <td align="center">{{n[0]}}</td>
+      <td align="center">{{n[1]}}</td>
+      <td align="center">{{n[2]}}</td>
+    </div>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</body>
+</html>

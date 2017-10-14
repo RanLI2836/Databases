@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+<title>tourist</title>
+<head>
+<style>
+header{
+  padding: 1em;
+  color: white;
+  background-color:rgb(150, 185, 215);
+}
+div.container{
+  padding: 1em;
+}
+div.sec01{
+      float: left;
+      width: 30%;
+    }
+div.sec02{
+      float: left;
+      width: 70%;
+    }
+table{
+    width: 100%;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+}
+table th {
+    background-color: rgb(200,200,200);
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Tourist</h1>
+</header>
+
+<div class="container">
+<div class="sec01">
+  <h3>Adding tourist</h3>
+   <!-- tid   tname   tgender   dob  tphone   tadd   -->
+
+  <form action="/addtourist" method="post">
+  tourist ID:<br>
+  <input type="text" name="tid" value="2017xxxx">
+  <br>
+  tourist name:<br>
+  <input type="text" name="tname" value="">
+  <br>
+  Gender:<br>
+  <input type="text" name="tgender" value="">
+  <br>
+  Date of Birth:<br>
+  <input type="text" name="dob" value="yyyy-mm-dd">
+  <br>
+  Phone Number:<br>
+  <input type="text" name="tphone" value=""><br>
+  Address:<br>
+  <input type="text" name="tadd" value="">
+  <br><br>
+  <input type="submit" value="Add">
+  <input type="reset">
+  </form>
+</div>
+
+<div class="sec02">
+  <table>
+    <h3>All tourists</h3>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th></th>
+    </tr>
+    {% for n in tourists %}
+    <tr>
+    <div>
+      <td align="center">{{n[1]}}</td> <!-- tname -->
+      <td align="center">{{n[2]}}</td> <!-- tgender -->
+      <td align="center">
+        <form method="post" action="/edittourist">
+          <input type="hidden" name="tid" value="{{n[0]}}"/>
+          <button type="submit">Edit</button>
+        </form>
+        <form method="post" action="/deltourist">
+          <input type="hidden" name="tid" value="{{n[0]}}"/>
+          <button type="submit">Delete</button>
+        </form>
+    </td>
+
+    </div>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<title>Hotel</title>
+<head>
+<style>
+header{
+  padding: 1em;
+  color: white;
+  background-color:rgb(150, 185, 215);
+}
+div.container{
+  padding: 1em;
+}
+div.sec01{
+      float: left;
+      width: 30%;
+    }
+div.sec02{
+      float: left;
+      width: 70%;
+    }
+table{
+    width: 100%;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+}
+table th {
+    background-color: rgb(200,200,200);
+    color: white;
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Hotel</h1>
+</header>
+
+<div class="container">
+<div class="sec01">
+  <h3>Adding Hotel</h3>
+  
+  <form action="/addhotel" method="post">
+  Hotel ID:<br>
+  <input type="text" name="hid" value="">
+  <br>
+  Hotel name:<br>
+  <input type="text" name="hname" value="">
+  <br>
+  Address:<br>
+  <input type="text" name="hadd" value="">
+  <br>
+  Tel:<br>
+  <input type="text" name="tel" value="">
+  <br>
+  star:<br>
+  <input type="text" name="star" value="">
+  <br><br>
+  <input type="submit" value="Add">
+  <input type="reset">
+  </form>
+</div>
+
+<div class="sec02">
+  <table>
+    <h3>All Hotels</h3>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Star</th>
+    </tr>
+    {% for n in hotels %}
+    <tr>
+    <div>
+      <td align="center">{{n[0]}}</td>
+      <td align="center">{{n[1]}}</td>
+      <td align="center">{{n[2]}}</td>
+      <td align="center">{{n[3]}}</td>
+    </div>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<html>
+<head>
+  <style>
+
+    header,footer {
+      padding: 1em;
+      color: white;
+      background-color:rgb(190, 160, 180);
+      clear: left;
+    }
+    div.container{
+  padding: 1em;
+}
+    div.sec{
+      float: left;
+      width: 25%;
+      background-color: rgb(235, 225, 235);
+    }
+    table{
+          width: 100%
+    }
+    table tr:nth-child(even) {
+      background-color: #eee;
+    }
+    table tr:nth-child(odd) {
+     background-color:#fff;
+    }
+    table th {
+    background-color: rgb(200,200,200);
+    color: white;
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tour Guide</h1>
+  </header>
+
+  <div class="container ">
+  <h3 align="center">Star Guide!</h3>
+  <p align="center">View our most exprienced tour guides and the total number of customer they have led!</p>
+  </div>
+  {% for m in starguides %}
+  <div class="sec">
+    <h2 align="center">{{m[0]}}</h2>
+    <p align="center">Job ID: {{m[1]}}</p>
+    <h4 align="center">{{m[2]}} customers!</h4>   
+  </div>
+  {% endfor %}
+  <div>
+    <table align="center">
+    <h3 align="center">All Tour Guides</h3>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Language</th>
+    </tr>
+    {% for n in tourguides %}
+    <tr>
+      <td align="center">{{n[0]}}</td>
+      <td align="center">{{n[1]}}</td>
+      <td align="center">{{n[2]}}</td>
+      <td align="center">{{n[3]}}</td>
+      <td align="center">{{n[4]}}</td>
+    </tr>
+    {% endfor %}
+    </table>    
+  </div>
+</body>
+
+
+</html>
+
+
